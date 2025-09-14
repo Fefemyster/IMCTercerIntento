@@ -22,11 +22,8 @@
             <Entry Text="{Binding Imcresult}" IsReadOnly ="True"/>
 
             <Button Text="Calcular IMC" Command="{Binding CalcularImcCommand}" />
-            <Button Text="Limpiar IMC" Background="HotPink" />
-
-
-
-
+            <Button Text="Limpiar IMC" Background="HotPink" Command="{Binding CleanCommand}"/>
+            
         </VerticalStackLayout>
     </ScrollView>
     
