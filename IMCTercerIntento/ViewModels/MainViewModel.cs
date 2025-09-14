@@ -28,7 +28,7 @@ namespace IMCTercerIntento.ViewModels
             }
            else
             {
-                imcresult = imc.weight / (imc.height * imc.height);
+               Imcresult = imc.weight / (imc.height * imc.height);
             }
         }
 

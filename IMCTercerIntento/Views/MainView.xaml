@@ -2,11 +2,33 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="IMCTercerIntento.Views.MainView"
-             Title="MainView">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUIDDDDDD!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             xmlns:viewModel="clr-namespace:IMCTercerIntento.ViewModels" 
+    Title="MainView">
+
+    <ContentPage.BindingContext>
+        <viewModel:MainViewModel/>
+    </ContentPage.BindingContext>
+
+
+        <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="5">
+            <Label Text="Ingrese su peso: " />
+            <Entry Text="{Binding Weight}" Keyboard="Numeric"/>
+
+            <Label Text="Ingrese su altura: " />
+            <Entry Text="{Binding Height}" Keyboard="Numeric"/>
+
+            <Label Text="Su IMC es: " />
+            <Entry Text="{Binding Imcresult}" IsReadOnly ="True"/>
+
+            <Button Text="Calcular IMC" Command="{Binding CalcularImcCommand}" />
+            <Button Text="Limpiar IMC" Background="HotPink" />
+
+
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+    
+    
 </ContentPage>
