@@ -29,11 +29,24 @@ namespace IMCTercerIntento.ViewModels
             else
             {
                 Imcresult = imc.weight / (imc.height * imc.height);
+
+                if (Imcresult < 18.5)
+                {
+                    await Application.Current!.MainPage!.DisplayAlert("Resultado", $"Tu IMC es {Imcresult:F29090}, estás bajo de peso.", "OK");
+                }
+                else if (Imcresult >= 18.5 && Imcresult < 24.9)
+                {
+                    await Application.Current!.MainPage!.DisplayAlert("Resultado", $"Tu IMC es {Imcresult:F2}, tienes un peso normal.", "OK");
+                }
+                else if (Imcresult >= 25 && Imcresult < 29.9)
+                {
+                    await Application.Current!.MainPage!.DisplayAlert("Resultado", $"Tu IMC es {Imcresult:F2}, tienes sobrepeso.", "OK");
+                }
+                else
+                {
+                    await Application.Current!.MainPage!.DisplayAlert("Resultado", $"Tu IMC es {Imcresult:F2}, tienes obesidad.", "OK");
+                }
             }
-
-
-
-
         }       
 
     
