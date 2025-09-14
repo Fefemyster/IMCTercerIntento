@@ -32,7 +32,7 @@ namespace IMCTercerIntento.ViewModels
 
                 if (Imcresult < 18.5)
                 {
-                    await Application.Current!.MainPage!.DisplayAlert("Resultado", $"Tu IMC es {Imcresult:F29090}, estás bajo de peso.", "OK");
+                    await Application.Current!.MainPage!.DisplayAlert("Resultado", $"Tu IMC es {Imcresult:F2}, estás bajo de peso.", "OK");
                 }
                 else if (Imcresult >= 18.5 && Imcresult < 24.9)
                 {
@@ -47,6 +47,11 @@ namespace IMCTercerIntento.ViewModels
                     await Application.Current!.MainPage!.DisplayAlert("Resultado", $"Tu IMC es {Imcresult:F2}, tienes obesidad.", "OK");
                 }
             }
+
+
+
+
+
         }       
 
     
